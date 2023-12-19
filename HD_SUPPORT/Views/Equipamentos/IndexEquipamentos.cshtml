@@ -1,0 +1,109 @@
+﻿@model IEnumerable<HD_SUPPORT.Models.Equipamento>
+
+@{
+    ViewData["Title"] = "IndexEquipamentos";
+}
+
+<h1>IndexEquipamentos</h1>
+
+<p>
+    <a asp-action="NovoEquipamento" class="btn btn-primary">Novo registro</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelegramUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefoneUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriaUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPatrimonio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModeloMarca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Processador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SistemaOperacional)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Headset)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InicioEmprestimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TerminoEmprestimo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelegramUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoneUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPatrimonio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModeloMarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Processador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SistemaOperacional)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Headset)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InicioEmprestimo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TerminoEmprestimo)
+            </td>
+            <td>
+                <a asp-action="AtualizarEquipamento" asp-route-equipamentoid="@item.Id" class="btn btn-primary">Atualizar</a>
+                <a asp-action="DetalharEquipamento" asp-route-equipamentoid="@item.Id" class="btn btn-success">Detalhes</a>
+                <form asp-action="ExcluirEquipamento" asp-route-equipamentoid="@item.Id">
+                    <button type="submit" class ="btn btn-danger">Excluir</button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
