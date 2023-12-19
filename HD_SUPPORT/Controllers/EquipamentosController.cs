@@ -32,7 +32,6 @@ namespace HD_SUPPORT.Controllers
             return RedirectToAction(nameof(IndexEquipamentos));
         }
 
-
         [HttpGet]
         public async Task<IActionResult> AtualizarEquipamento(int equipamentoId)
         {
