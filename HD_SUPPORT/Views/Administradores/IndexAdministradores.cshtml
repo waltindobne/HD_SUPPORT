@@ -36,7 +36,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Senha)
             </td>
-            <td>
+            <td style="display:flex;">
                 <a asp-action="AtualizarAdministrador" asp-route-administradorid="@item.Id" class="btn btn-primary">Atualizar</a> 
                 <a asp-action="DetalharAdministrador" asp-route-administradorid="@item.Id" class="btn btn-success">Detalhar</a> 
                 <form asp-action="ExcluirAdministrador" asp-route-administradorid="@item.Id">
